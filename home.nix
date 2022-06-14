@@ -6,15 +6,11 @@ in
 
   nixpkgs.config.allowUnfree = true;
   home = {
-    username = username;
-    homeDirectory = "/home/sda";
-    stateVersion = "21.11";
-    
     packages = with pkgs; [
       gnupg alacritty gcc discord gnumake spotify
-      pavucontrol binutils spectacle idea.idea-ultimate
+      pavucontrol binutils spectacle jetbrains.idea-ultimate
       feh unzip htop rustup thunderbird neofetch clang-tools
-      nginx python310 idea.webstorm dotnet-sdk_5
+      nginx python310 jetbrains.webstorm dotnet-sdk_5
     ];
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_5}";
