@@ -15,7 +15,7 @@
         config.allowUnfree = true;
       };
     in {
-      hmConfig.${username} = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
 	inherit system username pkgs;
 
         configuration = import ./home.nix;

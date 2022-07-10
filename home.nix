@@ -10,7 +10,8 @@ in
       gnupg alacritty gcc discord gnumake spotify
       pavucontrol binutils spectacle jetbrains.idea-ultimate
       feh unzip htop rustup thunderbird neofetch clang-tools
-      nginx python310 jetbrains.webstorm dotnet-sdk_5
+      nginx python310 jetbrains.webstorm dotnet-sdk_5 maven
+      openjdk16-bootstrap teams evince docker-compose slack
     ];
     sessionVariables = {
       DOTNET_ROOT = "${pkgs.dotnet-sdk_5}";
@@ -24,7 +25,7 @@ in
     userName = "Simon Scatton";
     userEmail = "simon.scatton@epita.fr";
     signing = {
-      key = "9246E65A97836EA71EEA7C8006AA334ED7492319";
+      key = "B8298DA12BEB779EE391229C64E21E63933BA3EC";
       signByDefault = true;
     };
   };
@@ -100,7 +101,7 @@ in
 
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: [ epkgs.vterm ];
+    extraPackages = epkgs: [ epkgs.vterm epkgs.pdf-tools ];
   };
 
   programs.alacritty = {
